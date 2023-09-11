@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@8.7.0",
   "description": "<description>",
-  "author": "AsakuraMizu",
+  "author": "Asakura Mizu",
   "license": "MIT",
   "homepage": "https://github.com/AsakuraMizu/unocss-preset-template#readme",
   "repository": {
@@ -45,7 +45,7 @@
     "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "lint": "eslint . --fix",
-    "format": "prettier --write ./**/*.{js,cjs,ts,html,css,svelte,md,json}",
+    "format": "prettier --write ./**/*.{js,cjs,ts,html,svelte,md,json}",
     "test": "vitest",
     "test:run": "vitest run"
   },

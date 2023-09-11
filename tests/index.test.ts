@@ -1,10 +1,10 @@
 import { createGenerator } from 'unocss';
 import { expect, test } from 'vitest';
-import { presetStarter } from '../src';
+import { presetFoo } from '../src';
 
 test('presetStarter', async () => {
   const uno = createGenerator({
-    presets: [presetStarter()],
+    presets: [presetFoo()],
   });
   const presets = uno.config.presets;
   expect(presets).toHaveLength(1);

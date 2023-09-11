@@ -1,8 +1,8 @@
 import { type Preset, definePreset } from 'unocss';
 
-export interface StarterOptions {}
+export interface FooOptions {}
 
-export function presetStarter(_options: StarterOptions = {}): Preset {
+export default function presetFoo(_options: FooOptions = {}): Preset {
   return definePreset({
     name: 'unocss-preset-starter',
     rules: [['custom-rule', { color: 'red' }]],

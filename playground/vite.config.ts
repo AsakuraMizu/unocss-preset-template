@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite';
+import unocss from 'unocss/vite';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [Vue(), UnoCSS()],
-})
+  plugins: [unocss(), svelte()],
+});

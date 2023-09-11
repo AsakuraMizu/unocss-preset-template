@@ -1,68 +1,73 @@
 {
-  "name": "unocss-preset-starter",
+  "name": "unocss-preset-template",
   "type": "module",
+  "private": true,
   "version": "0.0.0",
   "packageManager": "pnpm@8.7.0",
   "description": "<description>",
-  "author": "unpreset <https://github.com/unpreset>",
+  "author": "AsakuraMizu",
   "license": "MIT",
-  "homepage": "https://github.com/unpreset/unocss-preset-starter#readme",
+  "homepage": "https://github.com/AsakuraMizu/unocss-preset-template#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unpreset/unocss-preset-starter.git"
+    "url": "git+https://github.com/AsakuraMizu/unocss-preset-template.git"
   },
   "bugs": {
-    "url": "https://github.com/unpreset/unocss-preset-starter/issues"
+    "url": "https://github.com/AsakuraMizu/unocss-preset-template/issues"
   },
   "keywords": [
     "unocss",
-    "unpreset",
     "unocss-preset",
-    "unocss-preset-starter"
+    "unocss-preset-starter",
+    "unocss-preset-template"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "prepublishOnly": "pnpm run build",
+    "dev": "pnpm run -F playground dev",
+    "build": "tsup",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --fix",
+    "format": "prettier --write ./**/*.{js,cjs,ts,html,css,svelte,md,json}",
     "test": "vitest",
-    "test:update": "vitest --update",
-    "play": "npm -C playground run dev"
+    "test:run": "vitest run"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
-    "@babel/types": "^7.22.11",
-    "@types/node": "^20.5.9",
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@unocss/eslint-config": "^0.55.7",
     "bumpp": "^9.2.0",
-    "eslint": "^8.48.0",
-    "typescript": "5.1.6",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-svelte": "^2.33.1",
+    "eslint-plugin-vitest": "^0.3.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-svelte": "^3.0.3",
+    "svelte-eslint-parser": "^0.33.0",
+    "tsup": "^7.2.0",
+    "typescript": "5.2.2",
     "unbuild": "^2.0.0",
-    "unocss": "latest",
+    "unocss": "^0.55.7",
     "vite": "^4.4.9",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   }
 }
